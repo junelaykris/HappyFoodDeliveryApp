@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">HappyFoodDeliverApp</string>
+
+
+    <string name="bottom_navigation_txt_restaurants">Restaurants</string>
+    <string name="bottom_navigation_txt_offers">Offers</string>
+    <string name="bottom_navigation_txt_account">Account</string>
+
+    <string name="intro_page_title">Happy Meals</string>
+    <string name="intro_page_description">Discover the best foods from over 1000 restaurants</string>
+    <string name="intro_btn_get_started">Get Started</string>
+    <string name="email"> Email </string>
+    <string name="password"> Password </string>
+    <string name="login"> Login </string>
+    <string name="sign_up">Sign Up</string>
+    <string name="username"> Username </string>
+    <string name="phone"> Phone </string>
+    <string name="register"> Register </string>
+    <string name="sign_up_desc"> By Clicking Sign up your agree to the our Teams and Conditions</string>
+    <string name="already">Already and account ?</string>
+
+</resources>
