@@ -1,6 +1,9 @@
 package com.padcx.mmz.happyfooddeliveryapp.data.models
 
 import android.graphics.Bitmap
+import com.padcx.mmz.happyfooddeliveryapp.data.vos.CategoryVO
+import com.padcx.mmz.happyfooddeliveryapp.data.vos.FoodItemVO
+import com.padcx.mmz.happyfooddeliveryapp.data.vos.RestaurantVO
 import com.padcx.mmz.happyfooddeliveryapp.network.FirebaseApi
 import com.padcx.mmz.happyfooddeliveryapp.network.remoteconfig.FirebaseRemoteConfigManager
 
@@ -16,24 +19,24 @@ interface FoodDeliveryModel {
 
     fun getHomeScreenTypeStatusFromRemoteConfig() : Int
 
-  /*  fun uploadPhotoToFirebaseStorage( image : Bitmap , onSuccess: (photoUrl : String) -> Unit, onFailure: (String) -> Unit)
+    fun getRestaurants(onSuccess: (List<RestaurantVO>) -> Unit, onFailure: (String) -> Unit)
 
-    fun getCategories(onSuccess: (List<CategoryVO>) -> Unit, onFaiure: (String) -> Unit)
+    fun getCategories(onSuccess: (List<CategoryVO>) -> Unit, onFailure: (String) -> Unit)
 
-    fun getRestaurants(onSuccess: (List<RestaurantVO>) -> Unit, onFaiure: (String) -> Unit)
+    fun getPopularChoiceList(onSuccess: (List<FoodItemVO>) -> Unit, onFailure: (String) -> Unit)
 
-    fun getFoodItems(documentId: String, onSuccess: (List<FoodItemVO>,RestaurantVO) -> Unit, onFaiure: (String) -> Unit)
+    fun getFoodItems(documentId: String, onSuccess: (List<FoodItemVO>,RestaurantVO) -> Unit, onFailure: (String) -> Unit)
 
-    fun getPopularChoiceList(onSuccess: (List<FoodItemVO>) -> Unit, onFaiure: (String) -> Unit)
+    fun updateCartFoodItem(foodItemVO: FoodItemVO)
 
-    fun getOrderList(onSuccess: (List<FoodItemVO>) -> Unit, onFaiure: (String) -> Unit)
+    fun getCartItemCount(onSuccess: (cartCount: Long) -> Unit, onFailure: (String) -> Unit)
 
-    fun addOrUpdateFoodItem(foodItemVO: FoodItemVO)
+    fun getOrderList(onSuccess: (List<FoodItemVO>) -> Unit, onFailure: (String) -> Unit)
 
     fun removeFoodItem(name: String)
 
-    fun getCartItemCount(onSuccess: (cartCount: Long) -> Unit, onFialure: (String) -> Unit)
+    fun getTotalPrice(onSuccess: (cartCount: Long) -> Unit, onFailure: (String) -> Unit)
 
-    fun getTotalPrice(onSuccess: (cartCount: Long) -> Unit, onFialure: (String) -> Unit)*/
+    fun uploadPhotoToFirebaseStorage( image : Bitmap , onSuccess: (photoUrl : String) -> Unit, onFailure: (String) -> Unit)
 
 }

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_2x"
+    android:elevation="@dimen/margin_1x"
+    app:cardCornerRadius="@dimen/margin_2x"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margin_2x"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_food"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/margin_2x"
+                android:layout_marginStart="@dimen/margin_1x"
+                android:background="@color/white"
+                app:cardCornerRadius="@dimen/margin_2x"
+                app:layout_constraintBottom_toBottomOf="@id/tv_restaurant_price"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_restaurant_name">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_restaurant"
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/fooddelivery"
+                    app:srcCompat="@drawable/fooddelivery" />
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_restaurant_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_2x"
+                android:layout_marginEnd="@dimen/margin_2x"
+                android:contentDescription="@string/app_name"
+                android:padding="@dimen/margin_1x"
+                android:scaleType="centerCrop"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/regular_text_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cv_food"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Hello Restaurant" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_restaurant_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/margin_2x"
+                android:contentDescription="@string/app_name"
+                android:gravity="center_vertical"
+                android:maxLines="2"
+                android:padding="@dimen/margin_1x"
+                android:singleLine="false"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/regular_text_size"
+                app:layout_constraintStart_toEndOf="@+id/cv_food"
+                app:layout_constraintTop_toBottomOf="@+id/tv_restaurant_name"
+                tools:text="Cafe Western Food $$" />
+
+
+            <TextView
+                android:id="@+id/tv_restaurant_rating"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_2x"
+                android:drawableStart="@drawable/ic_baseline_star_24"
+                android:drawablePadding="@dimen/margin_2x"
+                android:gravity="center_vertical"
+                android:padding="@dimen/margin_1x"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_restaurant_name"
+                tools:text="4.3" />
+
+            <TextView
+                android:id="@+id/tv_restaurant_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_2x"
+                android:drawableStart="@drawable/moneybag"
+                android:drawablePadding="@dimen/margin_2x"
+                android:gravity="center_vertical"
+                android:padding="@dimen/margin_1x"
+                android:text=""
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cv_food"
+                app:layout_constraintTop_toBottomOf="@+id/tv_restaurant_description"
+                tools:text="20" />
+
+
+            <ImageView
+                android:id="@+id/btn_plus"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/ic_baseline_add_box_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_restaurant_rating" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

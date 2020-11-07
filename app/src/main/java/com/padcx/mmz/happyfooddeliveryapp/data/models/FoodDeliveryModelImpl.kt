@@ -2,6 +2,9 @@ package com.padcx.mmz.happyfooddeliveryapp.data.models
 
 import android.graphics.Bitmap
 import com.example.fooddeliveryapp.network.impls.CloudFirestoreFirebaseApiImpl
+import com.padcx.mmz.happyfooddeliveryapp.data.vos.CategoryVO
+import com.padcx.mmz.happyfooddeliveryapp.data.vos.FoodItemVO
+import com.padcx.mmz.happyfooddeliveryapp.data.vos.RestaurantVO
 import com.padcx.mmz.happyfooddeliveryapp.network.FirebaseApi
 import com.padcx.mmz.happyfooddeliveryapp.network.remoteconfig.FirebaseRemoteConfigManager
 
@@ -24,47 +27,36 @@ object FoodDeliveryModelImpl : FoodDeliveryModel {
         return  mFirebaseRemoteConfigManager.getHomeScreenViewTypeStatus()
     }
 
-   /* override fun uploadPhotoToFirebaseStorage(image: Bitmap , onSuccess: (photoUrl : String) -> Unit, onFailure: (String) -> Unit) {
-        mFirebaseApi.uploadPhotoToFirebaseStorage(image ,onSuccess,onFailure)
+    override fun getRestaurants(onSuccess: (List<RestaurantVO>) -> Unit, onFailure: (String) -> Unit) {
+        mFirebaseApi.getRestaurants(onSuccess, onFailure)
     }
 
-
-    override fun getCategories(onSuccess: (List<CategoryVO>) -> Unit, onFaiure: (String) -> Unit) {
-        mFirebaseApi.getCategories(onSuccess, onFaiure)
+    override fun getCategories(onSuccess: (List<CategoryVO>) -> Unit, onFailure: (String) -> Unit) {
+        mFirebaseApi.getCategories(onSuccess, onFailure)
     }
 
-    override fun getRestaurants(onSuccess: (List<RestaurantVO>) -> Unit, onFaiure: (String) -> Unit) {
-        mFirebaseApi.getRestaurants(onSuccess, onFaiure)
+    override fun getPopularChoiceList(onSuccess: (List<FoodItemVO>) -> Unit, onFailure: (String) -> Unit) {
+        mFirebaseApi.getPopularChoiceList(onSuccess, onFailure)
     }
-
-
 
     override fun getFoodItems(
-        documentId: String,
-        onSuccess: (List<FoodItemVO>,RestaurantVO) -> Unit,
-        onFaiure: (String) -> Unit
+            documentId: String,
+            onSuccess: (List<FoodItemVO>,RestaurantVO) -> Unit,
+            onFailure: (String) -> Unit
     ) {
-        mFirebaseApi.getFoodItems(documentId,onSuccess, onFaiure)
+        mFirebaseApi.getFoodItems(documentId,onSuccess, onFailure)
     }
 
-    override fun getPopularChoiceList(
-        onSuccess: (List<FoodItemVO>) -> Unit,
-        onFaiure: (String) -> Unit
-    ) {
-        mFirebaseApi.getPopularChoiceList(onSuccess, onFaiure)
-    }
-
-    override fun getOrderList(onSuccess: (List<FoodItemVO>) -> Unit, onFaiure: (String) -> Unit) {
-        mFirebaseApi.getOrderList(onSuccess, onFaiure)
-    }
-
-
-    override fun addOrUpdateFoodItem(foodItemVO: FoodItemVO) {
-        mFirebaseApi.addOrUpdateFoodItem(foodItemVO)
+    override fun updateCartFoodItem(foodItemVO: FoodItemVO) {
+        mFirebaseApi.addToCartItem(foodItemVO)
     }
 
     override fun getCartItemCount(onSuccess: (cartCount: Long) -> Unit, onFialure: (String) -> Unit) {
         mFirebaseApi.getCartItemCount(onSuccess,onFialure)
+    }
+
+    override fun getOrderList(onSuccess: (List<FoodItemVO>) -> Unit, onFaiure: (String) -> Unit) {
+        mFirebaseApi.getOrderList(onSuccess, onFaiure)
     }
 
     override fun getTotalPrice(onSuccess: (cartCount: Long) -> Unit, onFialure: (String) -> Unit) {
@@ -74,6 +66,8 @@ object FoodDeliveryModelImpl : FoodDeliveryModel {
     override fun removeFoodItem(id: String) {
         mFirebaseApi.deleteFoodItem(id)
     }
-*/
 
+    override fun uploadPhotoToFirebaseStorage(image: Bitmap , onSuccess: (photoUrl : String) -> Unit, onFailure: (String) -> Unit) {
+        mFirebaseApi.uploadPhotoToFirebaseStorage(image ,onSuccess,onFailure)
+    }
 }

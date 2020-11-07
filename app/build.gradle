@@ -96,4 +96,6 @@ dependencies {
     implementation rootProject.ext.libraries.firebaseFirestoreKtx
     implementation rootProject.ext.libraries.firebaseConfigKtx
     implementation rootProject.ext.libraries.firebaseStorageKtx
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }

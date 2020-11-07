@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?><!--<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/custom_food_image_size"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/margin_3x"
+    android:layout_marginTop="@dimen/margin_2x"
+    android:layout_marginRight="@dimen/margin_3x"
+    android:layout_marginBottom="@dimen/margin_2x"
+    android:background="@android:color/white"
+    android:elevation="2dp"
+    app:cardCornerRadius="@dimen/margin_2x"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="false">-->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_food"
+    android:layout_width="@dimen/custom_food_image_size"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:layout_margin="@dimen/margin_3x">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_ivfood"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:elevation="2dp"
+        app:cardCornerRadius="@dimen/margin_2x"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="false">
+
+        <ImageView
+            android:id="@+id/iv_food_item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/fooddelivery" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_restaurant_name"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="1dp"
+        android:maxLines="2"
+        android:text="xcxccs"
+        android:textColor="@color/black"
+        android:textSize="@dimen/regular_text_size"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/margin_1x"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cv_ivfood" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_food_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:maxLines="2"
+        android:text="kdlfdfsfs"
+        android:textColor="@color/black"
+        android:textSize="@dimen/small_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv_food_rating"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_restaurant_name" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_food_rating"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_2x"
+        android:drawableStart="@drawable/ic_baseline_star_24"
+        android:drawablePadding="@dimen/margin_2x"
+        android:gravity="center_vertical"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_food_description"
+        app:layout_constraintTop_toBottomOf="@+id/tv_restaurant_description"
+        tools:text="4.3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!--</androidx.cardview.widget.CardView>--><!--
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="250dp"
+    android:layout_height="280dp"
+    android:orientation="vertical"
+    android:layout_margin="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="3dp"
+        app:cardCornerRadius="15dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/fooddelivery"
+            android:scaleType="fitXY"
+            android:id="@+id/iv_food_item"/>
+    </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="Hollywood starz cafe"
+            android:id="@+id/tv_restaurant_name"
+            android:textSize="@dimen/regular_text_size"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="Cafe Westen Fodd $"
+            android:id="@+id/tv_food_description"
+            android:textSize="14sp"/>
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="4.5 stars"
+            android:drawableLeft="@drawable/ic_baseline_star_24"
+        android:id="@+id/tv_food_rating"
+        android:textSize="14sp"/>
+
+    </LinearLayout>
+</LinearLayout>-->

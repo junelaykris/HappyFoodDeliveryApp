@@ -16,5 +16,42 @@ class HomePresenterImpl : HomePresenter, AbstractBasePresenter<HomeView>() {
 
     override fun onUiReady(owner: LifecycleOwner) {
         mView?.changeHomeScreenViewType(foodDeliveryModel.getHomeScreenTypeStatusFromRemoteConfig())
+
+        foodDeliveryModel.getRestaurants(
+                onSuccess = {
+                    mView?.showRestaurants(it)
+                },
+                onFailure = {
+                    mView?.showErrorMessage(it)
+                })
+
+        foodDeliveryModel.getCategories(
+                onSuccess = {
+                    mView?.showCategories(it)
+                },
+                onFailure = {
+                    mView?.showErrorMessage(it)
+                })
+
+
+        foodDeliveryModel.getPopularChoiceList(
+                onSuccess = {
+                    mView?.showPopularChoicesFoodItems(it)
+                },
+                onFailure = {
+                mView?.showErrorMessage(it)
+        })
+    }
+
+    override fun onTapRestaurantsListItem(restaurantId: String) {
+        mView?.navigateToDetailScreen(restaurantId)
+    }
+
+    override fun onTapCategoryItem(categoryId: String) {
+
+    }
+
+    override fun onTapPopularChoiceListItem() {
+
     }
 }

@@ -4,19 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey">
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/grey"
+        android:background="@color/white"
         android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/location_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="10dp"
+            android:layout_margin="@dimen/margin_3x"
             android:orientation="vertical">
 
             <TextView
@@ -48,9 +48,7 @@
             android:id="@+id/rv_popular_choice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="10dp" />
+            android:layout_marginTop="5dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_category"
@@ -70,9 +68,7 @@
             android:id="@+id/rv_restaurants"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
-            android:layout_marginRight="10dp"
             android:layout_marginBottom="60dp" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

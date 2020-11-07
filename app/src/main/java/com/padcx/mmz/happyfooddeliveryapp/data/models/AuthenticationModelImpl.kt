@@ -1,5 +1,6 @@
 package com.padcx.mmz.happyfooddeliveryapp.data.models
 
+import com.padcx.mmz.happyfooddeliveryapp.data.vos.UserVO
 import com.padcx.mmz.happyfooddeliveryapp.network.auth.AuthManager
 import com.padcx.mmz.happyfooddeliveryapp.network.auth.FirebaseAuthManager
 
@@ -28,4 +29,13 @@ object AuthenticationModelImpl: AuthenticationModel  {
     ) {
         mAuthManager.register(username, email, password,phone, onSuccess, onFailure)
     }
+
+    override fun userData(onSuccess: (userVO: UserVO) -> Unit, onFailure: (String) -> Unit) {
+        mAuthManager.getUserData( onSuccess, onFailure)
+    }
+
+    override fun updateProfile(photoUrl: String, onSuccess: () -> Unit, onFailure: (String) -> Unit) {
+        mAuthManager.updateProfile(photoUrl, onSuccess, onFailure)
+    }
+
 }

@@ -1,5 +1,6 @@
 package com.padcx.mmz.happyfooddeliveryapp.data.models
 
+import com.padcx.mmz.happyfooddeliveryapp.data.vos.UserVO
 import com.padcx.mmz.happyfooddeliveryapp.network.auth.AuthManager
 
 /**
@@ -17,5 +18,16 @@ interface AuthenticationModel {
         phone: String,
         onSuccess: () -> Unit,
         onFailure: (String) -> Unit
+    )
+
+    fun userData(
+            onSuccess: (userVO : UserVO) -> Unit,
+            onFailure: (String) -> Unit
+    )
+
+    fun updateProfile(
+            photoUrl: String,
+            onSuccess: () -> Unit,
+            onFailure: (String) -> Unit
     )
 }

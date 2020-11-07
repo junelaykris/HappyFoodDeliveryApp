@@ -10,6 +10,7 @@ class FoodItemVO(
     var food_rating: String? = "",
     var food_image: String? = "",
     var popular: Boolean = false,
+    var most_popular: String?="",
     var itemCount: Long =1,
     var totalAmount: Long =0
 )

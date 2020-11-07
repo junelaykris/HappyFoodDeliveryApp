@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_2x"
+    android:elevation="@dimen/margin_1x"
+    app:cardCornerRadius="@dimen/margin_2x"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margin_2x"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_food"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/margin_2x"
+                android:layout_marginStart="@dimen/margin_1x"
+                android:background="@color/white"
+                app:cardCornerRadius="@dimen/margin_2x"
+                app:layout_constraintBottom_toBottomOf="@id/tv_totalamount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_restaurant_name">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_restaurant"
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/fooddelivery"
+                    app:srcCompat="@drawable/fooddelivery" />
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_restaurant_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_2x"
+                android:layout_marginEnd="@dimen/margin_2x"
+                android:contentDescription="@string/app_name"
+                android:padding="@dimen/margin_1x"
+                android:scaleType="centerCrop"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/regular_text_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/btn_delete"
+                app:layout_constraintStart_toEndOf="@+id/cv_food"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Hello Restaurant" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btn_delete"
+                android:layout_width="30dp"
+                android:layout_height="28dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/ic_baseline_remove_circle_24"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_restaurant_name"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_restaurant_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/margin_2x"
+                android:contentDescription="@string/app_name"
+                android:gravity="center_vertical"
+                android:maxLines="2"
+                android:padding="@dimen/margin_1x"
+                android:singleLine="false"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/regular_text_size"
+                app:layout_constraintStart_toEndOf="@+id/cv_food"
+                app:layout_constraintTop_toBottomOf="@+id/tv_restaurant_name"
+                tools:text="Cafe Western Food $$" />
+
+
+            <TextView
+                android:id="@+id/tv_restaurant_rating"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_2x"
+                android:drawableStart="@drawable/ic_baseline_star_24"
+                android:drawablePadding="@dimen/margin_2x"
+                android:gravity="center_vertical"
+                android:padding="@dimen/margin_1x"
+                android:text=""
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_restaurant_name"
+                tools:text="4.3" />
+
+            <TextView
+                android:id="@+id/tv_restaurant_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_2x"
+                android:drawableStart="@drawable/ic_baseline_attach_money_24"
+                android:gravity="center_vertical"
+                android:padding="@dimen/margin_1x"
+                android:text=""
+                app:layout_constraintStart_toEndOf="@+id/cv_food"
+                app:layout_constraintTop_toBottomOf="@+id/tv_restaurant_description"
+                tools:text="20" />
+
+
+            <TextView
+                android:id="@+id/tv_itemCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=" * 10 "
+                android:gravity="center_vertical"
+                android:padding="@dimen/margin_1x"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/tv_restaurant_price"
+                app:layout_constraintTop_toBottomOf="@+id/tv_restaurant_description" />
+
+
+            <TextView
+                android:id="@+id/tv_totalamount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=" $1000 "
+                android:textColor="@color/red_one"
+                android:textSize="@dimen/regular_text_size"
+                android:textStyle="bold"
+                android:layout_marginStart="@dimen/margin_2x"
+                app:layout_constraintStart_toEndOf="@+id/cv_food"
+                app:layout_constraintEnd_toStartOf="@+id/btn_plus"
+                app:layout_constraintTop_toBottomOf="@+id/tv_restaurant_price"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+            <ImageView
+                android:id="@+id/btn_plus"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_baseline_add_box_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_totalamount"
+                app:layout_constraintTop_toBottomOf="@+id/tv_itemCount" />
+
+
+            <ImageView
+                android:id="@+id/btn_minus"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/ic_baseline_indeterminate_check_box_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/margin_4x"
+                app:layout_constraintStart_toEndOf="@+id/btn_plus" />
+
+
+            <!--  <TextView
+                  android:id="@+id/tv_restaurant_price"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:drawableLeft="@drawable/ic_baseline_attach_money_24"
+                  android:text="20$"
+                  android:textColor="@color/black"
+                  android:textSize="16sp"
+                  android:textStyle="bold" />
+
+              <TextView
+                  android:id="@+id/tv_itemCount"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text=" * 10 "
+                  android:textColor="@color/black"
+                  android:textSize="16sp"
+                  android:textStyle="bold" />-->
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
+
+
+    <!--
+    <?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/ll_restaurant"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_marginTop="5dp"
+            android:elevation="5dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_weight="2.5"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:id="@+id/img_restaurant"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/fooddelivery" />
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="7.5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_restaurant_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Hollywood starz cafe"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_restaurant_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Cafe Western Food $$"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_restaurant_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_baseline_star_24"
+                        android:text="4.5 (124 ratings)"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_restaurant_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/ic_baseline_attach_money_24"
+                            android:text="20$"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_itemCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" * 10 "
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp">
+
+                        <TextView
+                            android:id="@+id/tv_totalamount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/ic_baseline_attach_money_24"
+                            android:text=" $1000 "
+                            android:textColor="@color/red_one"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/btn_plus"
+                                android:layout_width="30dp"
+                                android:layout_height="28dp"
+                                android:layout_marginRight="8dp"
+                                android:src="@drawable/ic_baseline_add_box_24" />
+
+                            <ImageView
+                                android:id="@+id/btn_minus"
+                                android:layout_width="30dp"
+                                android:layout_height="28dp"
+                                android:layout_marginRight="8dp"
+                                android:src="@drawable/ic_baseline_indeterminate_check_box_24" />
+
+                            <ImageView
+                                android:id="@+id/btn_delete"
+                                android:layout_width="30dp"
+                                android:layout_height="28dp"
+                                android:layout_marginRight="8dp"
+                                android:src="@drawable/ic_baseline_delete_forever_24" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>-->

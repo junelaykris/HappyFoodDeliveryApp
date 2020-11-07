@@ -26,6 +26,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corner_white"
             android:hint="@string/email"
+            android:text="mmz@gmail.com"
             android:padding="10dp"
             android:id="@+id/edt_email"
             android:layout_margin="10dp"/>
@@ -35,6 +36,7 @@
             android:background="@drawable/rounded_corner_white"
             android:hint="@string/password"
             android:padding="10dp"
+            android:text="mmzmmz"
             android:id="@+id/edt_password"
             android:layout_margin="10dp"/>
         <androidx.appcompat.widget.AppCompatButton
